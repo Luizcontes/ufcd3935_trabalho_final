@@ -1,0 +1,15 @@
+/home/luiz/Estudos/ufcd3935_trabalho_final/bin/Debug/net6.0/ufcd3935_trabalho_final
+/home/luiz/Estudos/ufcd3935_trabalho_final/bin/Debug/net6.0/ufcd3935_trabalho_final.deps.json
+/home/luiz/Estudos/ufcd3935_trabalho_final/bin/Debug/net6.0/ufcd3935_trabalho_final.runtimeconfig.json
+/home/luiz/Estudos/ufcd3935_trabalho_final/bin/Debug/net6.0/ufcd3935_trabalho_final.dll
+/home/luiz/Estudos/ufcd3935_trabalho_final/bin/Debug/net6.0/ufcd3935_trabalho_final.pdb
+/home/luiz/Estudos/ufcd3935_trabalho_final/obj/Debug/net6.0/ufcd3935_trabalho_final.csproj.AssemblyReference.cache
+/home/luiz/Estudos/ufcd3935_trabalho_final/obj/Debug/net6.0/ufcd3935_trabalho_final.GeneratedMSBuildEditorConfig.editorconfig
+/home/luiz/Estudos/ufcd3935_trabalho_final/obj/Debug/net6.0/ufcd3935_trabalho_final.AssemblyInfoInputs.cache
+/home/luiz/Estudos/ufcd3935_trabalho_final/obj/Debug/net6.0/ufcd3935_trabalho_final.AssemblyInfo.cs
+/home/luiz/Estudos/ufcd3935_trabalho_final/obj/Debug/net6.0/ufcd3935_trabalho_final.csproj.CoreCompileInputs.cache
+/home/luiz/Estudos/ufcd3935_trabalho_final/obj/Debug/net6.0/ufcd3935_trabalho_final.dll
+/home/luiz/Estudos/ufcd3935_trabalho_final/obj/Debug/net6.0/refint/ufcd3935_trabalho_final.dll
+/home/luiz/Estudos/ufcd3935_trabalho_final/obj/Debug/net6.0/ufcd3935_trabalho_final.pdb
+/home/luiz/Estudos/ufcd3935_trabalho_final/obj/Debug/net6.0/ufcd3935_trabalho_final.genruntimeconfig.cache
+/home/luiz/Estudos/ufcd3935_trabalho_final/obj/Debug/net6.0/ref/ufcd3935_trabalho_final.dll
