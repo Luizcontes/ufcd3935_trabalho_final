@@ -30,34 +30,18 @@ public class Menu
 
     public static User adicionarCliente(int numero)
     {
-        Console.Write("Nome: ");
-        string? nome = Console.ReadLine();
-        nome = nome == null ? "" : nome;
-        Console.Write("Morada: ");
-        string? morada = Console.ReadLine();
-        morada = morada == null ? "" : morada;
-        Console.Write("Codigo Postal: ");
-        string? codigoPostal = Console.ReadLine();
-        codigoPostal = codigoPostal == null ? "" : codigoPostal;
-        Console.Write("Localidade: ");
-        string? localidade = Console.ReadLine();
-        localidade = localidade == null ? "" : codigoPostal;
-        Console.Write("Telefone: ");
-        int telefone = Console.ReadLine();
-        // telefone = telefone == null ? "" : telefone;
-        Console.Write("E-mail: ");
-        string? email = Console.ReadLine();
-        email = email == null ? "" : email;
-        Console.Write("NIF: ");
-        int contribuinte = Console.ReadLine();
-        // contribuinte = contribuinte == null ? "" : contribuinte;
-        Console.Write("Saldo Disponivel: ");
-        float saldoDisponivel = Console.ReadLine();
-        // saldoDisponivel = saldoDisponivel == null ? "" : saldoDisponivel;
-        
-        User user = new User(numero, nome, morada, codigoPostal, localidade, telefone, email, contribuinte, saldoDisponivel, DateTime.Now);
+        string? titulo = "ADICIONAR NOVO CLIENTE\n\n";
 
-        return user;
+        string? nome = Validation.getStringInput(titulo + "Nome: ");
+        string? morada = Validation.getStringInput(titulo + "Morada: ");
+        string? codigoPostal = Validation.getStringInput(titulo + "Codigo Postal: ");
+        string? localidade = Validation.getStringInput(titulo + "Localidade: ");
+        int telefone = Validation.isValidInteger(titulo + "Telefone: ");
+        string? email = Validation.getStringInput(titulo + "E-mail: ");
+        int contribuinte = Validation.isValidInteger(titulo + "NIF: ");
+        float saldoDisponivel = Validation.isValidFloat(titulo + "Saldo Disponivel: ");
+        
+        return new User(numero, nome, morada, codigoPostal, localidade, telefone, email, contribuinte, 10, DateTime.Now);
     }
 
 }

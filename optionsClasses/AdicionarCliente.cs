@@ -10,7 +10,6 @@ public class AdicionarCliente : Strategy
 
     public void execute()
     {
-        Console.WriteLine("Adicionar Cliente!!!");
         User user = Menu.adicionarCliente(users.Count);
         users.Add(user);
         Console.Clear();

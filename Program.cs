@@ -9,17 +9,13 @@ class Program
         // List created to store users data
         List<User> users = new List<User>();
         
-        string? option;
-        Validation validation = new Validation();
-        Context context;
-
         while (true)
         {
-            option = Menu.menuOptions();
+            string? option = Menu.menuOptions();
 
-            context = new Context(new Incorrect());
+            Context context = new Context(new Incorrect());
 
-            if (validation.isOptionValid(option))
+            if (Validation.isOptionValid(option))
             {
                 if (option == "00")
                     context = new Context(new Exit());
@@ -49,7 +45,6 @@ class Program
 
             Console.Clear();
             context.executeStrategy();
-            Console.ReadLine();
         }
     }
 }
