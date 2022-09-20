@@ -1,8 +1,11 @@
 namespace ufcd3935_trabalho_final;
 
-public class Exit : Strategy {
+public class Exit : Strategy
+{
 
-    public void execute() {
+    public void execute()
+    {
+        Console.Clear();
         System.Environment.Exit(1);
     }
 }

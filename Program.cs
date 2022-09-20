@@ -5,19 +5,20 @@ class Program
 {
     static void Main(string[] args)
     {
+        
+        // List created to store users data
+        List<User> users = new List<User>();
+        
         string? option;
         Validation validation = new Validation();
         Context context;
 
-
         while (true)
         {
-            Console.Write(Menu.menuOptions());
-            option = Console.ReadLine();
-            Console.Clear();
+            option = Menu.menuOptions();
 
             context = new Context(new Incorrect());
-            
+
             if (validation.isOptionValid(option))
             {
                 if (option == "00")
@@ -31,7 +32,7 @@ class Program
                 if (option == "04")
                     context = new Context(new ListarCliente());
                 if (option == "05")
-                    context = new Context(new AdicionarCliente());
+                    context = new Context(new AdicionarCliente(users));
                 if (option == "06")
                     context = new Context(new EliminarCliente());
                 if (option == "07")
@@ -45,8 +46,10 @@ class Program
                 if (option == "11")
                     context = new Context(new AdicionarConsumo());
             }
-            
+
+            Console.Clear();
             context.executeStrategy();
+            Console.ReadLine();
         }
     }
 }
