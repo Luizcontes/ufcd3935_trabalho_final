@@ -40,8 +40,16 @@ public class Menu
         string? email = Validation.getStringInput(titulo + "E-mail: ");
         int contribuinte = Validation.isValidInteger(titulo + "NIF: ");
         float saldoDisponivel = Validation.isValidFloat(titulo + "Saldo Disponivel: ");
-        
+
         return new User(numero, nome, morada, codigoPostal, localidade, telefone, email, contribuinte, 10, DateTime.Now);
     }
 
+    public static void listarClientes(User user)
+    {
+        Console.WriteLine("Numero..............: \t" + user.Numero);
+        Console.WriteLine("Nome................: \t" + user.Nome);
+        Console.WriteLine("NIF.................: \t" + user.Contribuinte);
+        Console.WriteLine("Saldo Disponivel....: \t" + user.SaldoDisponivel);
+        Console.WriteLine();
+    }
 }

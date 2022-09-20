@@ -20,7 +20,7 @@ class Program
                 if (option == "00")
                     context = new Context(new Exit());
                 if (option == "01")
-                    context = new Context(new ListarClientes());
+                    context = new Context(new ListarClientes(users));
                 if (option == "02")
                     context = new Context(new SaldoAtivo());
                 if (option == "03")
