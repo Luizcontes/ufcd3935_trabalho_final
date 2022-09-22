@@ -28,16 +28,20 @@ public class Menu
         return option == null ? "" : option;
     }
 
-    public static void listarClientes(User user)
+    public static void listarClientes(User user, bool valid)
     {
-        Console.WriteLine("Numero..............: \t" + user.Numero);
+        Console.WriteLine("Numero..............: \t" + (user.Numero + 1));
         Console.WriteLine("Nome................: \t" + user.Nome);
-        Console.WriteLine("NIF.................: \t" + user.Contribuinte);
-        Console.WriteLine("Saldo Disponivel....: \t" + user.SaldoDisponivel);
+        if (valid)
+            Console.WriteLine("NIF.............: \t" + user.Contribuinte);
+        Console.WriteLine("Saldo Disponivel....: \t" + String.Format("{0:0.00}", user.SaldoDisponivel)+ " EUR");
+        if (!valid)
+        Console.WriteLine("Validade............: \t" + user.Validade.AddDays(30));
         Console.WriteLine();
     }
 
-    public static int listarCliente() {
+    public static int listarCliente()
+    {
 
         string? msg = "LISTAR CLIENTE\n\n" +
             "Digite o numero do cliente para listar\n" +
@@ -61,17 +65,20 @@ public class Menu
         return new User(numero, nome, morada, codigoPostal, localidade, telefone, email, contribuinte, saldoDisponivel, DateTime.Now);
     }
 
-    public static string fimOpcao(int opt) {
-        if (opt != 0) {
+    public static string fimOpcao(int opt)
+    {
+        if (opt != 0)
+        {
             return "Pressione qualquer tecla para continuar...";
         }
         return "Nao ha clientes cadastrados...";
     }
 
-    public static void imprimirCliente(User user) {
-        
+    public static void imprimirCliente(User user)
+    {
+
         Console.Write("LISTAR CLIENTE\n\n");
-        Console.WriteLine("Numero..............: \t" + user.Numero);
+        Console.WriteLine("Numero..............: \t" + (user.Numero + 1));
         Console.WriteLine("Nome................: \t" + user.Nome);
         Console.WriteLine("Morada..............: \t" + user.morada);
         Console.WriteLine("Codigo Postal.......: \t" + user.codigoPostal);
@@ -79,9 +86,8 @@ public class Menu
         Console.WriteLine("Telefone............: \t" + user.Telefone);
         Console.WriteLine("E-mail..............: \t" + user.email);
         Console.WriteLine("NIF.................: \t" + user.Contribuinte);
-        Console.WriteLine("Saldo Disponivel....: \t" + user.SaldoDisponivel);
+        Console.WriteLine("Saldo Disponivel....: \t" + String.Format("{0:0.00}", user.SaldoDisponivel)+ " EUR");
         Console.WriteLine("Validade............: \t" + user.Validade.AddDays(30));
-
         Console.WriteLine();
     }
 }

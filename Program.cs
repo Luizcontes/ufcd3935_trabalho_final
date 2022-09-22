@@ -25,7 +25,7 @@ class Program
                 if (option == "01")
                     context = new Context(new ListarClientes(users));
                 if (option == "02")
-                    context = new Context(new SaldoAtivo());
+                    context = new Context(new ListarClientes(users, false));
                 if (option == "03")
                     context = new Context(new ValidadeExpirada());
                 if (option == "04")

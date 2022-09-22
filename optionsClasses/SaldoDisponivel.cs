@@ -1,10 +1,10 @@
 namespace ufcd3935_trabalho_final;
 
-public class ListarCliente : Strategy
+public class SaldoDiponivel : Strategy
 {
 
     List<User> users;
-    public ListarCliente(List<User> users)
+    public SaldoDiponivel(List<User> users)
     {
         this.users = users;
     }
