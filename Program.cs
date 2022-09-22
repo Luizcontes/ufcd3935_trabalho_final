@@ -3,12 +3,15 @@
 using System;
 class Program
 {
+    
     static void Main(string[] args)
     {
-        
+
+        string fileName = "clients";
+
         // List created to store users data
-        List<User> users = new List<User>();
-        
+        List<User> users = FileManager.readCostumer(fileName);
+
         while (true)
         {
             string? option = Menu.menuOptions();
@@ -45,6 +48,7 @@ class Program
 
             Console.Clear();
             context.executeStrategy();
+            FileManager.writeData(fileName, users);
         }
     }
 }

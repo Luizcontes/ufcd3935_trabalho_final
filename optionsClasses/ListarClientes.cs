@@ -15,7 +15,7 @@ public class ListarClientes : Strategy
             Menu.listarClientes(users[i]);
         }
 
-        Console.Write("Pressione qualquer tecla para continuar...");
+        Console.Write(Menu.fimOpcao(users.Count));
         Console.ReadLine();
         Console.Clear();
     }

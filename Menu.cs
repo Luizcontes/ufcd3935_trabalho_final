@@ -41,7 +41,7 @@ public class Menu
         int contribuinte = Validation.isValidInteger(titulo + "NIF: ");
         float saldoDisponivel = Validation.isValidFloat(titulo + "Saldo Disponivel: ");
 
-        return new User(numero, nome, morada, codigoPostal, localidade, telefone, email, contribuinte, 10, DateTime.Now);
+        return new User(numero, nome, morada, codigoPostal, localidade, telefone, email, contribuinte, saldoDisponivel, DateTime.Now);
     }
 
     public static void listarClientes(User user)
@@ -51,5 +51,12 @@ public class Menu
         Console.WriteLine("NIF.................: \t" + user.Contribuinte);
         Console.WriteLine("Saldo Disponivel....: \t" + user.SaldoDisponivel);
         Console.WriteLine();
+    }
+
+    public static string fimOpcao(int opt) {
+        if (opt != 0) {
+            return "Pressione qualquer tecla para continuar...";
+        }
+        return "Nao ha clintes cadastrados...";
     }
 }
