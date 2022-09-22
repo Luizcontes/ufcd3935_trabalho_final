@@ -29,7 +29,7 @@ class Program
                 if (option == "03")
                     context = new Context(new ValidadeExpirada());
                 if (option == "04")
-                    context = new Context(new ListarCliente());
+                    context = new Context(new ListarCliente(users));
                 if (option == "05")
                     context = new Context(new AdicionarCliente(users));
                 if (option == "06")
