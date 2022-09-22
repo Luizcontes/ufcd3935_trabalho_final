@@ -13,7 +13,7 @@ public class Menu
             "01. Listar Todos o Cliente Ativos\n" +
             "02. Listar os Clientes Ativos com Saldo Disponivel\n" +
             "03. Listar os Clientes Ativos com Validade expirada\n" +
-            "04. Lista Dados Completos de um Cliente\n" +
+            "04. Listar Dados Completos de um Cliente\n" +
             "05. Adicionar um Cliente\n" +
             "06. Eliminar um Cliente\n" +
             "07. Atualizar um Cliente\n" +
@@ -28,15 +28,20 @@ public class Menu
         return option == null ? "" : option;
     }
 
-    public static void listarClientes(User user, bool valid)
+    public static void listarClientes(User user, string valid)
     {
         Console.WriteLine("Numero..............: \t" + (user.Numero + 1));
         Console.WriteLine("Nome................: \t" + user.Nome);
-        if (valid)
-            Console.WriteLine("NIF.............: \t" + user.Contribuinte);
-        Console.WriteLine("Saldo Disponivel....: \t" + String.Format("{0:0.00}", user.SaldoDisponivel)+ " EUR");
-        if (!valid)
-        Console.WriteLine("Validade............: \t" + user.Validade.AddDays(30));
+        if (valid == "all")
+            Console.WriteLine("NIF.................: \t" + user.Contribuinte);
+        Console.WriteLine("Saldo Disponivel....: \t" + String.Format("{0:0.00}", user.SaldoDisponivel) + " EUR");
+        if (valid == "valid")
+            Console.WriteLine("Validade............: \t" + user.Validade.AddDays(30));
+        if (valid == "invalid") {
+            Console.WriteLine("Vencido.............: \t" + 
+            String.Format("{0:0}", 
+            (DateTime.Now - user.Validade.AddDays(30)).TotalDays) + " dias");
+        }
         Console.WriteLine();
     }
 
@@ -45,7 +50,7 @@ public class Menu
 
         string? msg = "LISTAR CLIENTE\n\n" +
             "Digite o numero do cliente para listar\n" +
-            "Numero :";
+            "Numero : ";
         return Validation.isValidInteger(msg);
     }
 
@@ -71,7 +76,7 @@ public class Menu
         {
             return "Pressione qualquer tecla para continuar...";
         }
-        return "Nao ha clientes cadastrados...";
+        return "Nao ha cliente cadastrado com este numero...";
     }
 
     public static void imprimirCliente(User user)
@@ -86,7 +91,7 @@ public class Menu
         Console.WriteLine("Telefone............: \t" + user.Telefone);
         Console.WriteLine("E-mail..............: \t" + user.email);
         Console.WriteLine("NIF.................: \t" + user.Contribuinte);
-        Console.WriteLine("Saldo Disponivel....: \t" + String.Format("{0:0.00}", user.SaldoDisponivel)+ " EUR");
+        Console.WriteLine("Saldo Disponivel....: \t" + String.Format("{0:0.00}", user.SaldoDisponivel) + " EUR");
         Console.WriteLine("Validade............: \t" + user.Validade.AddDays(30));
         Console.WriteLine();
     }

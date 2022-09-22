@@ -25,9 +25,9 @@ class Program
                 if (option == "01")
                     context = new Context(new ListarClientes(users));
                 if (option == "02")
-                    context = new Context(new ListarClientes(users, false));
+                    context = new Context(new ListarClientes(users, "valid"));
                 if (option == "03")
-                    context = new Context(new ValidadeExpirada());
+                    context = new Context(new ListarClientes(users, "invalid"));
                 if (option == "04")
                     context = new Context(new ListarCliente(users));
                 if (option == "05")
