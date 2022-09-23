@@ -33,7 +33,7 @@ class Program
                 if (option == "05")
                     context = new Context(new AdicionarCliente(users));
                 if (option == "06")
-                    context = new Context(new EliminarCliente());
+                    context = new Context(new EliminarCliente(users));
                 if (option == "07")
                     context = new Context(new ModificarCliente());
                 if (option == "08")

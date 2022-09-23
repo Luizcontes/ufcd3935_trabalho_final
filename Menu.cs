@@ -54,6 +54,15 @@ public class Menu
         return Validation.isValidInteger(msg);
     }
 
+    public static int eliminarCliente()
+    {
+
+        string? msg = "ELIMINAR CLIENTE\n\n" +
+            "Digite o numero do cliente para eliminar\n" +
+            "Numero : ";
+        return Validation.isValidInteger(msg);
+    }
+
     public static User adicionarCliente(int numero)
     {
         string? titulo = "ADICIONAR NOVO CLIENTE\n\n";
@@ -67,7 +76,7 @@ public class Menu
         int contribuinte = Validation.isValidInteger(titulo + "NIF: ");
         float saldoDisponivel = Validation.isValidFloat(titulo + "Saldo Disponivel: ");
 
-        return new User(numero, nome, morada, codigoPostal, localidade, telefone, email, contribuinte, saldoDisponivel, DateTime.Now);
+        return new User(numero, true, nome, morada, codigoPostal, localidade, telefone, email, contribuinte, saldoDisponivel, DateTime.Now);
     }
 
     public static string fimOpcao(int opt)
@@ -76,13 +85,30 @@ public class Menu
         {
             return "Pressione qualquer tecla para continuar...";
         }
-        return "Nao ha cliente cadastrado com este numero...";
+        return "Nao ha cliente cadastrado...";
     }
 
     public static void imprimirCliente(User user)
     {
 
         Console.Write("LISTAR CLIENTE\n\n");
+        Console.WriteLine("Numero..............: \t" + (user.Numero + 1));
+        Console.WriteLine("Nome................: \t" + user.Nome);
+        Console.WriteLine("Morada..............: \t" + user.morada);
+        Console.WriteLine("Codigo Postal.......: \t" + user.codigoPostal);
+        Console.WriteLine("Localidade..........: \t" + user.localidade);
+        Console.WriteLine("Telefone............: \t" + user.Telefone);
+        Console.WriteLine("E-mail..............: \t" + user.email);
+        Console.WriteLine("NIF.................: \t" + user.Contribuinte);
+        Console.WriteLine("Saldo Disponivel....: \t" + String.Format("{0:0.00}", user.SaldoDisponivel) + " EUR");
+        Console.WriteLine("Validade............: \t" + user.Validade.AddDays(30));
+        Console.WriteLine();
+    }
+    
+    public static void imprimirEliminarCliente(User user)
+    {
+
+        Console.Write("ELIMIAR CLIENTE\n\n");
         Console.WriteLine("Numero..............: \t" + (user.Numero + 1));
         Console.WriteLine("Nome................: \t" + user.Nome);
         Console.WriteLine("Morada..............: \t" + user.morada);

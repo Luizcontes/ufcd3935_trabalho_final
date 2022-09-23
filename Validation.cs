@@ -40,6 +40,13 @@ public class Validation
                 Thread.Sleep(1000);
                 Console.Clear();
             }
+            catch (OverflowException)
+            {
+                Console.Clear();
+                Console.Write("Numero invalido, digite novamente...");
+                Thread.Sleep(1000);
+                Console.Clear();
+            }
         }
     }
 
@@ -62,6 +69,14 @@ public class Validation
                 Console.Clear();
             }
         }
+    }
+
+    public static bool isClientValid(User user) {
+        
+        if (user.active) {
+            return true;
+        }
+        return false;
     }
 
     public static string getStringInput(string? msg) {

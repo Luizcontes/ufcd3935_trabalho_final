@@ -14,10 +14,18 @@ public class ListarCliente : Strategy
         int userN = Menu.listarCliente();
         try
         {
-            Menu.imprimirCliente(users[userN - 1]);
-            Console.Write(Menu.fimOpcao(1));
+            if (Validation.isClientValid(users[userN - 1]) == true)
+            {
+                Menu.imprimirCliente(users[userN - 1]);
+                Console.Write(Menu.fimOpcao(1));
+            }
+            else
+            {
+                Console.Write(Menu.fimOpcao(0));
+            }
         }
-        catch (ArgumentOutOfRangeException) {
+        catch (ArgumentOutOfRangeException)
+        {
             Console.Write(Menu.fimOpcao(0));
         }
 
