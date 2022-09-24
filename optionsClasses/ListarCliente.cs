@@ -16,7 +16,7 @@ public class ListarCliente : Strategy
         {
             if (Validation.isClientValid(users[userN - 1]) == true)
             {
-                Menu.imprimirCliente(users[userN - 1]);
+                Menu.imprimirCliente(users[userN - 1], "LISTAR CLIENTE");
                 Console.Write(Menu.fimOpcao(1));
             }
             else

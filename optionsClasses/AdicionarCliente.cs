@@ -13,5 +13,9 @@ public class AdicionarCliente : Strategy
         User user = Menu.adicionarCliente(users.Count);
         users.Add(user);
         Console.Clear();
+        Menu.imprimirCliente(user, "ADICIONAR CLIENTE");
+        Console.Write("Cliente adicionado com sucesso...");
+        Console.Read();
+        Console.Clear();
     }
 }

@@ -14,7 +14,7 @@ public class EliminarCliente : Strategy
         {
             if (Validation.isClientValid(users[userN - 1]))
             {
-                Menu.imprimirEliminarCliente(users[userN - 1]);
+                Menu.imprimirCliente(users[userN - 1], "ELIMIAR CLIENTE");
                 users[userN - 1].active = false;
                 Console.WriteLine("\nCliente Eliminado com sucesso...\n");
                 Console.Write(Menu.fimOpcao(1));

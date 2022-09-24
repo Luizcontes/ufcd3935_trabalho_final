@@ -25,9 +25,9 @@ class Program
                 if (option == "01")
                     context = new Context(new ListarClientes(users));
                 if (option == "02")
-                    context = new Context(new ListarClientes(users, "valid"));
+                    context = new Context(new ListarClientes(users, "valid", "CLIENTES COM SALDO DISPONIVEL"));
                 if (option == "03")
-                    context = new Context(new ListarClientes(users, "invalid"));
+                    context = new Context(new ListarClientes(users, "invalid", "CLIENTES COM SALDO EXPIRADO"));
                 if (option == "04")
                     context = new Context(new ListarCliente(users));
                 if (option == "05")
@@ -35,7 +35,7 @@ class Program
                 if (option == "06")
                     context = new Context(new EliminarCliente(users));
                 if (option == "07")
-                    context = new Context(new ModificarCliente());
+                    context = new Context(new ModificarCliente(users));
                 if (option == "08")
                     context = new Context(new ListarCarregamento());
                 if (option == "09")

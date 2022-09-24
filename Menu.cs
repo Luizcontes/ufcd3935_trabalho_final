@@ -33,13 +33,18 @@ public class Menu
         Console.WriteLine("Numero..............: \t" + (user.Numero + 1));
         Console.WriteLine("Nome................: \t" + user.Nome);
         if (valid == "all")
+        {
             Console.WriteLine("NIF.................: \t" + user.Contribuinte);
+        }
         Console.WriteLine("Saldo Disponivel....: \t" + String.Format("{0:0.00}", user.SaldoDisponivel) + " EUR");
         if (valid == "valid")
+        {
             Console.WriteLine("Validade............: \t" + user.Validade.AddDays(30));
-        if (valid == "invalid") {
-            Console.WriteLine("Vencido.............: \t" + 
-            String.Format("{0:0}", 
+        }
+        if (valid == "invalid")
+        {
+            Console.WriteLine("Vencido.............: \t" +
+            String.Format("{0:0}",
             (DateTime.Now - user.Validade.AddDays(30)).TotalDays) + " dias");
         }
         Console.WriteLine();
@@ -61,6 +66,22 @@ public class Menu
             "Digite o numero do cliente para eliminar\n" +
             "Numero : ";
         return Validation.isValidInteger(msg);
+    }
+
+    public static int modificarCliente()
+    {
+
+        string? msg = "ATUALIZAR CLIENTE\n\n" +
+            "Digite o numero do cliente para atualizar\n" +
+            "Numero : ";
+        return Validation.isValidInteger(msg);
+    }
+
+    public static string modificarCampo()
+    {
+
+        string? msg = "Digite o nome do campo para atualizar: ";
+        return Validation.isValidField(msg);
     }
 
     public static User adicionarCliente(int numero)
@@ -88,10 +109,10 @@ public class Menu
         return "Nao ha cliente cadastrado...";
     }
 
-    public static void imprimirCliente(User user)
+    public static void imprimirCliente(User user, string msg)
     {
 
-        Console.Write("LISTAR CLIENTE\n\n");
+        Console.Write($"{msg}\n\n");
         Console.WriteLine("Numero..............: \t" + (user.Numero + 1));
         Console.WriteLine("Nome................: \t" + user.Nome);
         Console.WriteLine("Morada..............: \t" + user.morada);
@@ -104,12 +125,11 @@ public class Menu
         Console.WriteLine("Validade............: \t" + user.Validade.AddDays(30));
         Console.WriteLine();
     }
-    
-    public static void imprimirEliminarCliente(User user)
+
+    public static void imprimirAtualizarCliente(User user, string msg)
     {
 
-        Console.Write("ELIMIAR CLIENTE\n\n");
-        Console.WriteLine("Numero..............: \t" + (user.Numero + 1));
+        Console.Write($"{msg}\n\n");
         Console.WriteLine("Nome................: \t" + user.Nome);
         Console.WriteLine("Morada..............: \t" + user.morada);
         Console.WriteLine("Codigo Postal.......: \t" + user.codigoPostal);
@@ -117,8 +137,6 @@ public class Menu
         Console.WriteLine("Telefone............: \t" + user.Telefone);
         Console.WriteLine("E-mail..............: \t" + user.email);
         Console.WriteLine("NIF.................: \t" + user.Contribuinte);
-        Console.WriteLine("Saldo Disponivel....: \t" + String.Format("{0:0.00}", user.SaldoDisponivel) + " EUR");
-        Console.WriteLine("Validade............: \t" + user.Validade.AddDays(30));
         Console.WriteLine();
     }
 }

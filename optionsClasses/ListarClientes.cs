@@ -4,19 +4,22 @@ public class ListarClientes : Strategy
 {
     List<User> users;
     string valid = "all";
+    string msg = "LISTAR CLIENTES";
     public ListarClientes(List<User> users)
     {
         this.users = users;
     }
-    public ListarClientes(List<User> users, string valid)
+    public ListarClientes(List<User> users, string valid, string msg)
     {
         this.users = users;
         this.valid = valid;
+        this.msg = msg;
     }
     public void execute()
     {
         int counter = 0;
 
+        Console.Write($"{this.msg}\n\n");
         for (int i = 0; i < users.Count; i++)
         {
             if (users[i].active == true)

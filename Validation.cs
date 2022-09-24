@@ -50,6 +50,54 @@ public class Validation
         }
     }
 
+    public static int isInteger(string? data)
+    {
+
+        try
+        {
+            return Convert.ToInt32(data);
+        }
+        catch (Exception)
+        {
+            Console.Write("Campo em formato incorreto...");
+            Console.Read();
+            return 0;
+        }
+    }
+
+    public static string isValidField(string? msg)
+    {
+        while (true)
+        {
+            Console.Write(msg);
+            string? field = Console.ReadLine();
+            field = field == null ? "" : field.ToLower();
+            Console.Clear();
+            switch (field)
+            {
+                case "nome":
+                    return "Nome";
+                case "morada":
+                    return "Morada";
+                case "codigo postal":
+                    return "Codigo Postal";
+                case "localidade":
+                    return "Localidade";
+                case "telefone":
+                    return "Telefone";
+                case "e-mail":
+                    return "E-mail";
+                case "nif":
+                    return "NIF";
+                default:
+                    Console.Write("Escolha a opcao correta...");
+                    Console.Read();
+                    break;
+            }
+        }
+
+    }
+
     public static float isValidFloat(string? msg)
     {
         while (true)
@@ -71,18 +119,21 @@ public class Validation
         }
     }
 
-    public static bool isClientValid(User user) {
-        
-        if (user.active) {
+    public static bool isClientValid(User user)
+    {
+
+        if (user.active)
+        {
             return true;
         }
         return false;
     }
 
-    public static string getStringInput(string? msg) {
+    public static string getStringInput(string? msg)
+    {
 
         Console.Write(msg);
-        string? str = Console.ReadLine(); 
+        string? str = Console.ReadLine();
         str = str == null ? "" : str;
         Console.Clear();
         return str;

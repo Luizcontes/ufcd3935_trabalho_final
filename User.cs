@@ -5,13 +5,13 @@ public class User
 
     public int Numero { get; }
     public bool active;
-    public string Nome { get; }
+    public string Nome { get; set; }
     public string morada;
     public string codigoPostal;
     public string localidade;
-    public int Telefone { get; }
+    public int Telefone { get; set; }
     public string email;
-    public int Contribuinte { get; }
+    public int Contribuinte { get; set; }
     public float SaldoDisponivel { get; }
     public DateTime Validade { get; set; }
 
@@ -68,6 +68,43 @@ public class User
             u.Validade;
 
         return data;
+    }
+
+    public bool atualizaDado(string field, string data) {
+
+            switch(field.ToLower()) {
+                case "nome":
+                    this.Nome = data;
+                    return true;
+                case "morada":
+                    this.morada = data;
+                    return true;
+                case "codigo postal":
+                    this.codigoPostal = data;
+                    return true;
+                case "localidade":
+                    this.localidade = data;
+                    return true;
+                case "telefone":
+                    this.Telefone = Validation.isInteger(data);
+                    if (this.Telefone == 0) {
+                        return false;
+                    }
+                    return true;
+                case "e-mail":
+                    this.email = data;
+                    return true;
+                case "nif":
+                    this.Contribuinte = Validation.isInteger(data);
+                    if (this.Contribuinte == 0) {
+                        return false;
+                    }
+                    return true;
+                default:
+                    Console.Write("Escolha a opcao correta...");
+                    Console.Read();
+                    return false;
+            }
     }
 
 }
