@@ -43,7 +43,7 @@ class Program
                 if (option == "10")
                     context = new Context(new AdicionarCarregamento(users));
                 if (option == "11")
-                    context = new Context(new AdicionarConsumo());
+                    context = new Context(new AdicionarConsumo(users));
             }
 
             Console.Clear();
