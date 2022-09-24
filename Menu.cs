@@ -59,6 +59,15 @@ public class Menu
         return Validation.isValidInteger(msg);
     }
 
+    public static int buscarClienteCarregar()
+    {
+
+        string? msg = "ADICIONAR CARREGAMENTO\n\n" +
+            "Digite o numero do cliente para adicionar carregamento\n" +
+            "Numero : ";
+        return Validation.isValidInteger(msg);
+    }
+
     public static int eliminarCliente()
     {
 

@@ -64,6 +64,21 @@ public class Validation
             return 0;
         }
     }
+    
+    public static float isFloat(string? data)
+    {
+
+        try
+        {
+            return Convert.ToSingle(data);
+        }
+        catch (Exception)
+        {
+            Console.Write("Campo em formato incorreto...");
+            Console.Read();
+            return 0;
+        }
+    }
 
     public static string isValidField(string? msg)
     {

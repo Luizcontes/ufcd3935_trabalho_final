@@ -41,7 +41,7 @@ class Program
                 if (option == "09")
                     context = new Context(new ListarConsumo());
                 if (option == "10")
-                    context = new Context(new AdicionarCarregamento());
+                    context = new Context(new AdicionarCarregamento(users));
                 if (option == "11")
                     context = new Context(new AdicionarConsumo());
             }
