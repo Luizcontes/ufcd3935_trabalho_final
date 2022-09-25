@@ -10,7 +10,7 @@ public class ListarCarregamento : Strategy
     }
     public void execute()
     {
-        int userN = Menu.buscarClienteCarregar();
+        int userN = Menu.listarClienteCarregamento();
         try
         {
             if (Validation.isClientValid(users[userN - 1]) == true)
@@ -19,20 +19,11 @@ public class ListarCarregamento : Strategy
                 while (true)
                 {
                     Menu.imprimirCliente(users[userN - 1], "LISTAR CARREGAMENTO");
-                    // Console.Write("Valor a carregar: ");
-                    // valor = Validation.isFloat(Console.ReadLine());
-                    // if (valor > 0) {
-                    //     break;
-                    // }
-                    // else if (valor < 0) {
-                    //     Console.Write("So e permitido valores positivos...");
-                        bal.listarCarregamento();
-                        break;
-                    // }
-                    // Console.Clear();
+
+                    bal.listarCarregamento();
+                    Console.Write(Menu.fimOpcao(1));
+                    break;
                 }
-                // bal.addTransaction(DateTime.Now, valor);
-                Menu.fimOpcao(1);
 
             }
             else

@@ -68,6 +68,33 @@ public class Menu
         return Validation.isValidInteger(msg);
     }
 
+    public static int adicionarClienteConsumo()
+    {
+
+        string? msg = "ADICIONAR CONSUMO\n\n" +
+            "Digite o numero do cliente para adicionar consumo\n" +
+            "Numero : ";
+        return Validation.isValidInteger(msg);
+    }
+
+    public static int listarClienteCarregamento()
+    {
+
+        string? msg = "LISTAR CARREGAMENTO\n\n" +
+            "Digite o numero do cliente para listar carregamento\n" +
+            "Numero : ";
+        return Validation.isValidInteger(msg);
+    }
+
+    public static int listarClienteConsumo()
+    {
+
+        string? msg = "LISTAR CONSUMO\n\n" +
+            "Digite o numero do cliente para listar consumo\n" +
+            "Numero : ";
+        return Validation.isValidInteger(msg);
+    }
+
     public static int buscarClienteConsumo()
     {
 

@@ -14,7 +14,6 @@ class Program
 
         while (true)
         {
-            Console.WriteLine($"List: {users.Count}");
             string? option = Menu.menuOptions();
 
             Context context = new Context(new Incorrect());
@@ -49,7 +48,6 @@ class Program
 
             Console.Clear();
             context.executeStrategy();
-            Console.WriteLine($"Salved: {users.Count}");
             FileManager.writeData(fileName, users);
         }
     }

@@ -35,6 +35,7 @@ class Balance
                 Console.WriteLine($" ... {tokens[1]}");
             }
         }
+        Console.WriteLine();
     }
 
     public void listarConsumo()
@@ -50,6 +51,7 @@ class Balance
                 Console.WriteLine($" ... {tokens[1]}");
             }
         }
+        Console.WriteLine();
     }
 
     public float updateBalance()

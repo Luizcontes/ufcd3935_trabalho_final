@@ -10,7 +10,7 @@ public class AdicionarConsumo : Strategy
     }
     public void execute()
     {
-        int userN = Menu.buscarClienteCarregar();
+        int userN = Menu.adicionarClienteConsumo();
         try
         {
             if (Validation.isClientValid(users[userN - 1]) == true)
@@ -36,7 +36,7 @@ public class AdicionarConsumo : Strategy
                 DateTime date = DateTime.Now;
                 float saldo = bal.addTransaction(DateTime.Now, valor * -1);
                 users[userN -1].updateBalance(date, saldo);
-                Console.Write("Carregamento adicionado com sucesso...");
+                Console.Write("Consumo adicionado com sucesso...");
 
             }
             else
