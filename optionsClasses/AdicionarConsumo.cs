@@ -33,8 +33,10 @@ public class AdicionarConsumo : Strategy
                     }
                     Console.Clear();
                 }
-                bal.addTransaction(DateTime.Now, valor * -1);
-                Console.Write("Consumo adicionado com sucesso...");
+                DateTime date = DateTime.Now;
+                float saldo = bal.addTransaction(DateTime.Now, valor * -1);
+                users[userN -1].updateBalance(date, saldo);
+                Console.Write("Carregamento adicionado com sucesso...");
 
             }
             else

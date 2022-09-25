@@ -31,9 +31,10 @@ public class AdicionarCarregamento : Strategy
                     }
                     Console.Clear();
                 }
-                bal.addTransaction(DateTime.Now, valor);
+                DateTime date = DateTime.Now;
+                float saldo = bal.addTransaction(DateTime.Now, valor);
+                users[userN -1].updateBalance(date, saldo);
                 Console.Write("Carregamento adicionado com sucesso...");
-
             }
             else
             {

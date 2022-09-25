@@ -14,6 +14,7 @@ class Program
 
         while (true)
         {
+            Console.WriteLine($"List: {users.Count}");
             string? option = Menu.menuOptions();
 
             Context context = new Context(new Incorrect());
@@ -37,9 +38,9 @@ class Program
                 if (option == "07")
                     context = new Context(new ModificarCliente(users));
                 if (option == "08")
-                    context = new Context(new ListarCarregamento());
+                    context = new Context(new ListarCarregamento(users));
                 if (option == "09")
-                    context = new Context(new ListarConsumo());
+                    context = new Context(new ListarConsumo(users));
                 if (option == "10")
                     context = new Context(new AdicionarCarregamento(users));
                 if (option == "11")
@@ -48,6 +49,7 @@ class Program
 
             Console.Clear();
             context.executeStrategy();
+            Console.WriteLine($"Salved: {users.Count}");
             FileManager.writeData(fileName, users);
         }
     }

@@ -12,7 +12,7 @@ public class User
     public int Telefone { get; set; }
     public string email;
     public int Contribuinte { get; set; }
-    public float SaldoDisponivel { get; }
+    public float SaldoDisponivel { get; set; }
     public DateTime Validade { get; set; }
 
     public User(int numero, bool active, string nome, string morada, string codigoPostal, string localidade, int telefone, string email, int contribuinte, float saldoDisponivel, DateTime validade)
@@ -64,7 +64,8 @@ public class User
             u.Telefone + ";" +
             u.email + ";" +
             u.Contribuinte + ";" + 
-            u.SaldoDisponivel + ";" +
+            // u.SaldoDisponivel + ";" +
+            String.Format("{0:0.00}", u.SaldoDisponivel) + ";" +
             u.Validade;
 
         return data;
@@ -105,6 +106,12 @@ public class User
                     Console.Read();
                     return false;
             }
+    }
+
+    public void updateBalance(DateTime date, float balance) {
+
+        this.Validade = date;
+        this.SaldoDisponivel = balance;
     }
 
 }
